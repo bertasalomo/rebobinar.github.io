@@ -330,8 +330,8 @@ h3 {
 
 #avio1 {
     animation-name: avio1;
-    animation-duration: 4.5s;
-    animation-delay: 1s;
+    animation-duration: 5s;
+    animation-delay: 0.1s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
@@ -350,8 +350,8 @@ h3 {
 
 #avio2 {
     animation-name: avio2;
-    animation-duration: 5s;
-    animation-delay: 1s;
+    animation-duration: 5.2s;
+    animation-delay: 0.3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
