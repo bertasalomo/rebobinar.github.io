@@ -1,0 +1,545 @@
+/* 1. Use a more-intuitive box-sizing model. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*3. Allow percentage-based heights in the application*/
+html,
+body {
+    height: 100%;
+}
+
+html {
+    display: contents;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*6. Improve media defaults*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Create a root stacking context */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/*______________________ AQUÍ COMENÇA EL MEU CODI______________________*/
+/*______________________ AQUÍ COMENÇA EL MEU CODI______________________*/
+/*______________________ AQUÍ COMENÇA EL MEU CODI______________________*/
+
+/*______________________ 00. FONS i BODY ______________________*/
+/*__________________________________________________________________*/
+body {
+    background: #161616;
+    /*1c1c1c*/
+    font-family: 'Merriweather', serif;
+    color: #eae2e2;
+}
+
+.background-noise {
+    /* height: 97vh; */
+    /* opacity: 0.05; */
+    /* z-index: -1; */
+    background-image: url("https://mwambao.or.tz/wp-content/uploads/2015/05/noise-for-dark-background.png");
+    background-position: 50% 50%;
+    animation: noise 0.5s steps(1) infinite;
+}
+
+@keyframes noise {
+    0% {
+        background-position: 20% 10%;
+    }
+
+    20% {
+        background-position: 90% 40%;
+    }
+
+    40% {
+        background-position: 60% 30%;
+    }
+
+    60% {
+        background-position: 100% 50%;
+    }
+
+    80% {
+        background-position: 30% 80%;
+    }
+}
+
+#cursor {
+    color: #e73b47;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10000;
+    transition: all 0.15s ease;
+
+}
+
+/*______________________ 01. TÍTOL-MARC ______________________*/
+/*__________________________________________________________________*/
+
+.titol-web {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+
+}
+
+.titol-web div {
+    font-family: 'Inter', 'Merriweather', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 1s;
+
+    color: #eae2e2;
+    mix-blend-mode: difference;
+    /* NO FUNCIONA BLEND MODE */
+
+}
+
+.titol-web div:hover {
+    letter-spacing: 0.4em;
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    to {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.rotating {
+    animation: rotating 4s linear infinite
+}
+
+.elipse-rebobina {
+    box-sizing: border-box;
+    position: fixed;
+    width: 115px;
+    height: 115px;
+    border: 1px solid #eae2e2;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.text-rebobina {
+    position: absolute;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #eae2e2;
+}
+
+
+/* ELIPSE */
+.elipse-rebobina:hover span {
+    display: none;
+}
+
+.elipse-rebobina:hover:before {
+    content: "FES SCROLL";
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/*______________________ 01. CONTAINER ______________________*/
+/*__________________________________________________________________*/
+
+
+.flexbox-container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column-reverse;
+    position: fixed;
+    overflow-y: auto;
+}
+
+
+
+/*______________________ 02. TITOL-INICI ______________________*/
+/*__________________________________________________________________*/
+h1 {
+    font-size: 4em;
+}
+
+h2,
+h3 {
+    font-weight: 100;
+    font-size: 2.5em;
+}
+
+#titol {
+    height: 90vh;
+    background: url("../media/gif-escorxador.gif") no-repeat center;
+    background-size: 100%;
+    background-blend-mode: luminosity;
+
+}
+
+/*______________________ 03. PORTADA-SLIDES ______________________*/
+/*__________________________________________________________________*/
+
+.portada {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.portada .box {
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.textgran {
+    font-weight: 100;
+    font-size: 2.2em;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    text-indent: 70px;
+    position: relative;
+    z-index: 2;
+}
+
+.step {
+    opacity: 0;
+    transition: all 1s;
+}
+
+
+/*______________________ 03. IMATGES ______________________*/
+/*__________________________________________________________________*/
+.foto-bn {
+    max-width: 500px;
+    opacity: 0.2 !important;
+    z-index: 1;
+    transition: all 1s;
+    position: absolute;
+}
+
+.foto-bn:hover {
+    opacity: 1 !important;
+}
+
+.element-flotant {
+    max-width: 300px;
+    z-index: 3;
+    position: absolute;
+}
+
+#img1 {
+    bottom: 30px;
+    right: 10px;
+}
+
+@keyframes avio1 {
+    from {
+        top: 25%;
+        left: -30%;
+    }
+
+    to {
+        top: 5%;
+        left: 110%;
+    }
+}
+
+#avio1 {
+    animation-name: avio1;
+    animation-duration: 4.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes avio2 {
+    from {
+        top: 85%;
+        left: -30%;
+    }
+
+    to {
+        top: 65%;
+        left: 110%;
+    }
+}
+
+#avio2 {
+    animation-name: avio2;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/*___________________________Slide 2*/
+#bomba1 {
+    top: 96%;
+    left: 47%;
+}
+
+#bomba2 {
+    top: 80%;
+    left: 5%;
+    transform: scale(0.8);
+}
+
+#bomba3 {
+    top: 65%;
+    left: 75%;
+    transform: scale(1.5);
+}
+
+#img2 {
+    top: 80%;
+    left: 1%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+#img3 {
+    top: 60%;
+    left: 60%;
+}
+
+#img4 {
+    top: -10%;
+    left: 10%;
+}
+
+/*___________________________Slide 3*/
+#img5 {
+    top: 50%;
+    left: 60%;
+}
+
+#img6 {
+    top: 10%;
+    left: 10%;
+}
+
+/*___________________________Slide 4*/
+#img7 {
+    top: 50%;
+    left: 60%;
+}
+
+#img8 {
+    top: 10%;
+    left: 10%;
+}
+
+/*___________________________Slide 5*/
+#img9 {
+    top: 75%;
+    left: 55%;
+}
+
+#img10 {
+    top: 55%;
+    left: 1%;
+}
+
+#img11 {
+    top: 30%;
+    left: 60%;
+}
+
+#img12 {
+    top: 1%;
+    left: 15%;
+}
+
+/*___________________________Slide 6*/
+#img13 {
+    top: 75%;
+    left: 60%;
+    transform: scale(0.8);
+}
+
+
+#img14 {
+    top: 45%;
+    left: 5%;
+}
+
+#img15 {
+    top: -4%;
+    left: 53%;
+}
+
+#mineral1 {
+    top: 68%;
+    left: 16%;
+    transform: scale(0.5) rotate(45deg);
+}
+
+#mineral2 {
+    top: 38%;
+    left: 60%;
+    transform: scale(0.5) rotate(-60deg);
+}
+
+#mineral3 {
+    top: -7%;
+    left: -4%;
+    transform: scale(0.8);
+}
+
+/*___________________________Slide 7*/
+#img17 {
+    top: 35%;
+    left: 4%;
+}
+
+#img18 {
+    top: 22%;
+    left: 55%;
+}
+
+#img19 {
+    top: 9%;
+    left: 25%;
+}
+
+#img20 {
+    top: -15%;
+    left: 65%;
+}
+
+/*___________________________Slide 8*/
+#img21 {
+    top: 10%;
+    left: 50%;
+}
+
+#hitler {
+    top: 60%;
+    left: 20%;
+    transform: scale(1) rotate(207deg);
+}
+
+/*___________________________Slide 9*/
+#poma {
+    top: 70%;
+    left: 20%;
+    transform: scale(0.8) rotate(345deg);
+}
+
+#evaiadam {
+    transform: scale(0.95) rotate(355deg);
+}
+
+#evaiadam:hover {
+    transform: scale(1) rotate(359.9deg);
+}
+
+#slide9b {
+    max-height: 50vh;
+}
+
+#pardal {
+    top: 13%;
+    left: 55%;
+}
+
+/*______________________ 03. TEXTFINAL ______________________*/
+/*__________________________________________________________________*/
+
+#textfinal {
+    font-size: 1.2em;
+    font-family: 'Inter', 'Merriweather', sans-serif;
+    line-height: 150%;
+    text-align: center;
+    max-width: 45vw;
+}
+
+/*_______________________________________________________________________________________*/
+/*_______________________________________________________________________________________*/
+/*_______________________________________________________________________________________*/
+/*_______________________________________________________________________________________*/
+/*_______________________________________________________________________________________*/
