@@ -3,7 +3,7 @@
 window.addEventListener('scroll', function (e) {
 
     const target = document.querySelectorAll('.parallax');
-    // const target = document.querySelectorAll('.element-flotant', '.foto-bn', '.step');
+    // const target = document.querySelectorAll('.element-flotant', '.foto-bn');
 
 
     var index = 0, length = target.length;
